@@ -1,0 +1,18 @@
+<tr id= "question_group_<%= question_group.id %>">
+  <td width="250">
+    <% if can_administer? %>
+      <%= link_to question_group.name, question_group_questions_path(question_group) %>
+    <% else %>
+      <%= question_group.name %>
+    <% end %>
+  </td>
+  <td>
+    <ul class=" list-inline">
+      <li><%= link_to "Responder Encuesta", new_question_group_answer_group_path(question_group), class: "btn btn-success btn-small" %></li>
+      <% if can_administer? %>
+        <li><%= link_to "Resultados", [:results, question_group], class: "btn btn-primary btn-small" %></li>
+        <li><%= link_to "Eliminar", [question_group], method: :delete, class: "btn btn-danger btn-small",data: { confirm:  '¿Esta seguro?'} %></li>
+      <% end %>
+    </il>
+  </td>
+</tr>

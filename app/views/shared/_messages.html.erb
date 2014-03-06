@@ -1,0 +1,9 @@
+<% flash.each do |name, msg| %>
+	<% if notice %>
+    	<%= content_tag :div, msg, :id => "flash_#{name}", class: "alert alert-notice" %>
+	<% elsif alert %>
+		<%= content_tag :div, msg, :id => "flash_#{name}", class: "alert alert-error" %>
+	<% else %>
+		<%= content_tag :div, msg, :id => "flash_#{name}" %>
+	<% end %>
+<% end %>
