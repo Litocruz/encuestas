@@ -12,7 +12,7 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
-    1.times { @user.question_groups.build}
+    #1.times { @user.question_groups.build}
   end
 
   def create
